@@ -144,7 +144,7 @@ def main():
             encryption(n, k, M)
         elif userInput == 2:
             n = int(input("Enter a number: "))
-            print("It takes ", hsum2(n), " elements of the harmonic series in order for the sum to be greater than ", n, ".", sep="")
+            print("\nIt takes ", hsum2(n), " elements of the harmonic series in order for the sum to be greater than ", n, ".", sep="")
         elif userInput == 3:
             n = int(input("Enter a number: "))
             if n % 10 == 1:
@@ -156,7 +156,7 @@ def main():
             else:
                 suffix = "th"
                 
-            print("The ", n, suffix, " element of the G series is ", g_series(n), ".", sep="")
+            print("\nThe ", n, suffix, " element of the G series is ", g_series(n), ".", sep="")
         else:
             userInput = int("Not a valid menu option: ")
 
