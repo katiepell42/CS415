@@ -122,6 +122,7 @@ def g_series(n):
 
 
 def printMenu():
+    print()
     print("1. Solve problem 3")
     print("2. Solve problem 4a")
     print("3. Solve problem 4b")
@@ -152,7 +153,7 @@ def main():
                 
             print("The ", n, suffix, " element of the G series is ", g_series(n), ".", sep="")
         else:
-            userInput = int(input(("Please select a valid menu option: ")))
+            userInput = int("Not a valid menu option: ")
 
         printMenu()
         userInput = int(input("\nEnter another option from the menu: "))
