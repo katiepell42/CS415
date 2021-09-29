@@ -1,3 +1,8 @@
+# CS 415 Project 1
+# Fall 2021
+
+# Garret Mook and Katie Pell
+
 from random import randint
 
 # Problem 1 - Check if a number is prime
