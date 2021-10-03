@@ -25,7 +25,7 @@ def primality(N):
     return False
 
 def primality2(N, k):
-    # Check the probality function k times to make sure its a valid return
+    # Check the probability function k times to make sure its a valid return
     for i in range(1, k):
         if primality(N):
             return True
@@ -34,6 +34,9 @@ def primality2(N, k):
 # Checks for prime number
 def primality3(N, k):
     checklist = [2, 3, 5, 7]
+    for item in checklist:
+        if N == item:
+            return False
     for item in checklist:
         if N % item == 0:
             return False
