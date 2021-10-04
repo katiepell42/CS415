@@ -4,6 +4,8 @@
 # Garret Mook and Katie Pell
 
 from random import randint
+from time import time
+import sys
 
 # Problem 1 - Check if a number is prime
 # Solves x^y mod p
@@ -109,10 +111,18 @@ def less(a, b, c, d):
 def hsum2(n):
     j = 1
     sum = (0, 1)
-    while sum[0]/sum[1] < n:
-        sum = (sum[0]*j + sum[1], sum[1] * j)
+    while less(sum[0], sum[1], n, 1):
+        sum = ((sum[0] * j + sum[1])/gcd(sum[0], sum[1])[2], (sum[1] * j)/gcd(sum[0], sum[1])[2]) # New sum with next term already added
+
         j = j + 1
     return j - 1
+
+    # while sum < n:
+    #   sum = fraction addition to get new sum
+    #   if not simplified:
+    #       divide top and bottom by gcd to simplify
+    #   increment j
+    #   return j - 1
 
 # Part B
 def g_series(n):
@@ -128,7 +138,6 @@ def g_series(n):
 
     return (numerator, denominator)
 
-
 def printMenu():
     print()
     print("1. Solve problem 3")
@@ -137,6 +146,7 @@ def printMenu():
     print("4. Quit")
 
 def main():
+    sys.setrecursionlimit(10000)
     printMenu()
     userInput = int(input("Enter an option from the menu: "))
     while userInput != 4:
@@ -147,7 +157,11 @@ def main():
             encryption(n, k, M)
         elif userInput == 2:
             n = int(input("Enter a number: "))
+            start_time = time()
             print("\nIt takes ", hsum2(n), " elements of the harmonic series in order for the sum to be greater than ", n, ".", sep="")
+            end_time = time()
+
+            print(end_time - start_time, " seconds")
         elif userInput == 3:
             n = int(input("Enter a number: "))
             if n % 10 == 1:
@@ -167,3 +181,4 @@ def main():
         userInput = int(input("\nEnter another option from the menu: "))
 
 main()
+
