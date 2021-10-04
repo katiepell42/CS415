@@ -108,11 +108,11 @@ def less(a, b, c, d):
 # Part A
 def hsum2(n):
     j = 1
-    sum = 0
-    while sum < n:
-        sum = sum + 1/j
+    sum = (0, 1)
+    while sum[0]/sum[1] < n:
+        sum = (sum[0]*j + sum[1], sum[1] * j)
         j = j + 1
-    return j
+    return j - 1
 
 # Part B
 def g_series(n):
